@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Authzing.com Documentation</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">Authzing.com Documentation</a>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#authzing-user-guide" class="nav-link">Authzing User Guide</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#table-of-contents" class="nav-link">Table of Contents</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#using-the-dashboard" class="nav-link">Using the Dashboard</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#setting-up-the-servers" class="nav-link">Setting up the Servers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="authzing-user-guide">Authzing User Guide</h1>
+<p>Welcome to Authzing! This guide will help you get started with managing SSH access for your team using our web dashboard and Linux agent.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#using-the-dashboard">Using the Dashboard</a></li>
+<li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#managing-your-profile">Managing Your Profile</a></li>
+<li><a href="#organization-administration">Organization Administration</a></li>
+<li><a href="#setting-up-the-servers">Setting up the Servers</a></li>
+<li><a href="#getting-your-api-key">Getting Your API Key</a></li>
+<li><a href="#installation-methods">Installation Methods</a></li>
+<li><a href="#configuration">Configuration</a></li>
+<li><a href="#managing-the-service">Managing the Service</a></li>
+</ol>
+<hr />
+<h2 id="using-the-dashboard">Using the Dashboard</h2>
+<h3 id="getting-started">Getting Started</h3>
+<h4 id="creating-your-account">Creating Your Account</h4>
+<ol>
+<li>Navigate to the Authzing login page</li>
+<li>Click on "Sign Up" to create a new account</li>
+<li>Fill in your username, email, and password</li>
+<li>Click "Sign Up" to complete registration</li>
+</ol>
+<h4 id="logging-in">Logging In</h4>
+<ol>
+<li>Enter your username and password</li>
+<li>Click "Login" to access your dashboard</li>
+</ol>
+<h3 id="managing-your-profile">Managing Your Profile</h3>
+<h4 id="adding-ssh-keys">Adding SSH Keys</h4>
+<p>SSH keys are essential for secure server access. Here's how to add your SSH key:</p>
+<ol>
+<li>Click on "Profile" in the navigation menu</li>
+<li>Locate the "SSH Keys" section</li>
+<li>Paste your public SSH key in the text field</li>
+<li>Click "Add SSH Key"</li>
+</ol>
+<p>[Screenshot placeholder: Profile page with SSH key section]</p>
+<p><strong>Finding your SSH key:</strong></p>
+<pre><code class="language-bash"># If you have an existing SSH key
+cat ~/.ssh/id_rsa.pub
+
+# If you need to generate a new SSH key
+ssh-keygen -t rsa -b 4096 -C &quot;your-email@example.com&quot;
+</code></pre>
+<h4 id="managing-your-ssh-keys">Managing Your SSH Keys</h4>
+<ul>
+<li>View all your SSH keys in the profile page</li>
+<li>Each key shows when it was added</li>
+<li>Click "Delete" to remove keys you no longer use</li>
+</ul>
+<p><img alt="profile-image" src="profile.png" title="Profile" /></p>
+<h3 id="organization-administration">Organization Administration</h3>
+<p>If you're an organization admin, you have additional capabilities to manage teams and members.</p>
+<h4 id="creating-an-organization">Creating an Organization</h4>
+<ol>
+<li>Click "New Organization" in the navigation menu</li>
+<li>Enter your organization name</li>
+<li>Click "Create Organization"</li>
+</ol>
+<h4 id="inviting-team-members">Inviting Team Members</h4>
+<ol>
+<li>Navigate to your organization page</li>
+<li>Click "Invite Member"</li>
+<li>Enter the email address of the person you want to invite</li>
+<li>Click "Send Invitation"</li>
+</ol>
+<p>The invited user will receive an email with instructions to join your organization.</p>
+<h4 id="creating-and-managing-teams">Creating and Managing Teams</h4>
+<p>Teams help you organize members and control their server access:</p>
+<ol>
+<li>From your organization page, click "Create New Team"</li>
+<li>Enter a team name (e.g., "developers", "contractors")</li>
+<li>Click "Create Team"</li>
+</ol>
+<h4 id="adding-members-to-teams">Adding Members to Teams</h4>
+<ol>
+<li>Navigate to the team you want to manage</li>
+<li>Click "Manage Members"</li>
+<li>Select users from your organization</li>
+<li>Click "Update Team Members"</li>
+</ol>
+<h4 id="managing-api-keys">Managing API Keys</h4>
+<p>API keys allow the Linux agent to authenticate with Authzing:</p>
+<ol>
+<li>Go to your organization page</li>
+<li>Click "API Keys"</li>
+<li>Click "Create New API Key"</li>
+<li>Give your key a descriptive name (e.g., "Production Servers")</li>
+<li><strong>Important</strong>: Copy the API key immediately - it won't be shown again!</li>
+</ol>
+<p><img alt="create-api-key-image" src="create-api-key.png" title="Create API Key" />
+<img alt="show-api-key-image" src="show-api-key.png" title="Show API Key" /></p>
+<h4 id="viewing-login-activity">Viewing Login Activity</h4>
+<p>Monitor who's accessing your servers:</p>
+<ol>
+<li>From your organization page, click "Login Activity"</li>
+<li>View recent logins with details:</li>
+<li>Username</li>
+<li>Server hostname</li>
+<li>Login time and duration</li>
+<li>IP address</li>
+</ol>
+<p>You can filter by:
+- Username
+- Server name
+- Date range</p>
+<hr />
+<h2 id="setting-up-the-servers">Setting up the Servers</h2>
+<h3 id="getting-your-api-key">Getting Your API Key</h3>
+<p>Before installing the agent on your servers, you need an API key:</p>
+<ol>
+<li>Log in to the Authzing dashboard</li>
+<li>Navigate to your organization</li>
+<li>Click "API Keys"</li>
+<li>Create a new API key or use an existing one</li>
+<li>Copy the key (format: <code>sk_...</code>)</li>
+</ol>
+<p>[Screenshot placeholder: API keys page showing where to copy the key]</p>
+<h3 id="installation-methods">Installation Methods</h3>
+<p>Choose the installation method that best fits your system:</p>
+<h4 id="method-1-package-installation-recommended">Method 1: Package Installation (Recommended)</h4>
+<p><strong>For Debian/Ubuntu systems:</strong></p>
+<pre><code class="language-bash"># Download the .deb package
+wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-linux-agent_1.0.0_amd64.deb
+
+# Install the package
+sudo dpkg -i authzing-linux-agent_1.0.0_amd64.deb
+
+# The service is installed but not started
+</code></pre>
+<p><strong>For RHEL/Rocky Linux/Fedora systems:</strong></p>
+<pre><code class="language-bash"># Download the .rpm package
+wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-linux-agent-1.0.0-1.el9.x86_64.rpm
+
+# Install the package
+sudo rpm -i authzing-linux-agent-1.0.0-1.el9.x86_64.rpm
+
+# The service is installed but not started
+</code></pre>
+<h4 id="method-2-binary-installation">Method 2: Binary Installation</h4>
+<p>For systems where packages aren't available:</p>
+<pre><code class="language-bash"># Download the binary archive
+wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-agent-1.0.0-linux-amd64.tar.gz
+
+# Extract the archive
+tar -xzf authzing-agent-1.0.0-linux-amd64.tar.gz
+
+# Copy binary to system path
+sudo cp authzing-agent /usr/bin/
+sudo chmod +x /usr/bin/authzing-agent
+
+# Copy the example config
+sudo cp authzing.yaml.example /etc/authzing.yaml
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<h4 id="basic-configuration">Basic Configuration</h4>
+<p>Edit the configuration file at <code>/etc/authzing.yaml</code>:</p>
+<pre><code class="language-yaml"># Authzing Linux Agent Configuration
+api_key: sk_your_api_key_here
+
+# Optional: Disable TLS verification for testing
+# WARNING: Only use this with self-signed certificates in test environments
+# insecure: false
+
+# Teams to sync
+teams:
+  - name: developers
+    sudo: true    # Members can use sudo
+  - name: contractors
+    sudo: false   # Members cannot use sudo
+</code></pre>
+<h4 id="advanced-configuration">Advanced Configuration</h4>
+<p><strong>Using environment variables:</strong></p>
+<pre><code class="language-bash"># Override API key via environment variable
+export AUTHZING_API_KEY=&quot;sk_your_api_key_here&quot;
+
+# Use custom API endpoint (for self-hosted instances)
+export AUTHZING_API_URL=&quot;https://authzing.company.com&quot;
+</code></pre>
+<p><strong>Command line options:</strong></p>
+<pre><code class="language-bash"># Use a custom config file location
+authzing-agent -config /path/to/config.yaml
+
+# Show version information
+authzing-agent -version
+
+# Disable TLS verification (testing only)
+authzing-agent -insecure
+</code></pre>
+<h3 id="managing-the-service">Managing the Service</h3>
+<h4 id="systemd-service-file">Systemd Service File</h4>
+<p>If you installed via binary, create <code>/etc/systemd/system/authzing-agent.service</code>:</p>
+<pre><code class="language-ini">[Unit]
+Description=Authzing Linux Agent
+Documentation=https://github.com/yourusername/authzing
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/authzing-agent
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=authzing-agent
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/home /etc/passwd /etc/group /etc/shadow /etc/sudoers.d /var/lib/authzing /var/log
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<h4 id="starting-the-service">Starting the Service</h4>
+<pre><code class="language-bash"># Reload systemd to recognize the new service
+sudo systemctl daemon-reload
+
+# Enable the service to start on boot
+sudo systemctl enable authzing-agent
+
+# Start the service
+sudo systemctl start authzing-agent
+
+# Check service status
+sudo systemctl status authzing-agent
+</code></pre>
+<h4 id="monitoring-the-agent">Monitoring the Agent</h4>
+<p><strong>View logs:</strong></p>
+<pre><code class="language-bash"># View recent logs
+sudo journalctl -u authzing-agent -n 50
+
+# Follow logs in real-time
+sudo journalctl -u authzing-agent -f
+
+# View logs from the last hour
+sudo journalctl -u authzing-agent --since &quot;1 hour ago&quot;
+</code></pre>
+<p><strong>Log file location:</strong>
+The agent also writes to <code>/var/log/authzing.log</code></p>
+<h4 id="troubleshooting">Troubleshooting</h4>
+<p><strong>Service won't start:</strong>
+1. Check the configuration file syntax
+2. Verify the API key is correct
+3. Ensure network connectivity to app.authzing.com
+4. Check logs for specific errors</p>
+<p><strong>Users not being created:</strong>
+1. Verify the team name in config matches dashboard exactly
+2. Check that users have SSH keys added in their profile
+3. Review agent logs for sync errors</p>
+<p><strong>SSH access not working:</strong>
+1. Ensure the user's SSH key is correctly formatted
+2. Check <code>/home/username/.ssh/authorized_keys</code> exists
+3. Verify SSH daemon is running and configured correctly</p>
+<h3 id="how-it-works">How It Works</h3>
+<p>The Authzing Linux Agent:</p>
+<ol>
+<li><strong>Syncs every 5 minutes</strong> with the Authzing API</li>
+<li><strong>Creates local users</strong> for team members</li>
+<li><strong>Updates SSH keys</strong> in <code>~/.ssh/authorized_keys</code></li>
+<li><strong>Manages sudo access</strong> via <code>/etc/sudoers.d/</code></li>
+<li><strong>Tracks login activity</strong> and reports to dashboard</li>
+</ol>
+<h3 id="security-considerations">Security Considerations</h3>
+<ul>
+<li>The agent requires root privileges to manage users</li>
+<li>API keys should be kept secure and rotated regularly</li>
+<li>Use TLS verification in production (don't use <code>-insecure</code>)</li>
+<li>The agent only creates users, never deletes them</li>
+<li>SSH keys are synced, but existing keys are replaced</li>
+</ul>
+<h3 id="next-steps">Next Steps</h3>
+<ol>
+<li>Add your SSH key to your profile</li>
+<li>Join or create teams</li>
+<li>Install the agent on your servers</li>
+<li>Monitor access through the dashboard</li>
+</ol>
+<p>For additional help:
+- Check the <a href="#">FAQ</a>
+- Review <a href="#">API documentation</a>
+- Contact support at support@authzing.com</p>
+<hr />
+<p><em>Last updated: [Current Date]</em></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2025-06-30 15:34:51.749452+00:00
+-->
