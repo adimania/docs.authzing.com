@@ -178,10 +178,12 @@ ssh-keygen -t rsa -b 4096 -C &quot;your-email@example.com&quot;
 <li>Login time and duration</li>
 <li>IP address</li>
 </ol>
-<p>You can filter by:
-- Username
-- Server name
-- Date range</p>
+<p>You can filter by:</p>
+<ul>
+<li>Username</li>
+<li>Server name</li>
+<li>Date range</li>
+</ul>
 <hr />
 <h2 id="setting-up-the-servers">Setting up the Servers</h2>
 <h3 id="getting-your-api-key">Getting Your API Key</h3>
@@ -198,6 +200,10 @@ ssh-keygen -t rsa -b 4096 -C &quot;your-email@example.com&quot;
 <p>Choose the installation method that best fits your system:</p>
 <h4 id="method-1-package-installation-recommended">Method 1: Package Installation (Recommended)</h4>
 <p><strong>For Debian/Ubuntu systems:</strong></p>
+<ul>
+<li>AMD64: https://public.authzing.com/authzing-linux-agent_1.0.0_amd64.deb</li>
+<li>ARM64: https://public.authzing.com/authzing-linux-agent_1.0.0_arm64.deb</li>
+</ul>
 <pre><code class="language-bash"># Download the .deb package
 wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-linux-agent_1.0.0_amd64.deb
 
@@ -207,6 +213,10 @@ sudo dpkg -i authzing-linux-agent_1.0.0_amd64.deb
 # The service is installed but not started
 </code></pre>
 <p><strong>For RHEL/Rocky Linux/Fedora systems:</strong></p>
+<ul>
+<li>AMD64: https://public.authzing.com/authzing-linux-agent-1.0.0_amd64.rpm</li>
+<li>ARM64: https://public.authzing.com/authzing-linux-agent-1.0.0_arm64.rpm</li>
+</ul>
 <pre><code class="language-bash"># Download the .rpm package
 wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-linux-agent-1.0.0-1.el9.x86_64.rpm
 
@@ -217,6 +227,11 @@ sudo rpm -i authzing-linux-agent-1.0.0-1.el9.x86_64.rpm
 </code></pre>
 <h4 id="method-2-binary-installation">Method 2: Binary Installation</h4>
 <p>For systems where packages aren't available:</p>
+<ul>
+<li>AMD64: https://public.authzing.com/authzing-agent-1.0.0-linux-amd64.tar.gz</li>
+<li>ARM64: https://public.authzing.com/authzing-agent-1.0.0-linux-arm64.tar.gz</li>
+<li>ARM7: https://public.authzing.com/authzing-agent-1.0.0-linux-arm7.tar.gz</li>
+</ul>
 <pre><code class="language-bash"># Download the binary archive
 wget https://github.com/yourusername/authzing/releases/download/linux-agent-v1.0.0/authzing-agent-1.0.0-linux-amd64.tar.gz
 
@@ -444,5 +459,5 @@ The agent also writes to <code>/var/log/authzing.log</code></p>
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2025-06-30 15:42:06.668724+00:00
+Build Date UTC : 2025-06-30 16:29:23.618457+00:00
 -->
